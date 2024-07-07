@@ -5,6 +5,7 @@ print('--Значение по ключу "year":', my_dict['year'], sep = '\n')
 my_dict.update({'all lessons': 235, 'little dream': (43.345068, 42.465897)})
 
 del_value = my_dict.pop('Language')
+print('--Вызов занчение по удаленному ключу:', my_dict.get('Language'), sep = '\n')
 print('--Удаленное значение:', del_value, sep = '\n')
 print('--Словарь после удаления:', my_dict, sep = '\n')
 
