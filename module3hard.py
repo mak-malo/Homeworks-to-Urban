@@ -5,31 +5,19 @@ def plus_item (item):  # Вспомогательная функция для п
         total_sum += len(item)
     elif type(item) == int or type(item) == float:
         total_sum += item
-    elif type(item) == list:
-        summator_in_list(item)
+    elif type(item) == list or type(item) == set or type(item) == tuple:
+        summator_in_list_set_tuple(item)
     elif type(item) == dict:
         summator_in_dict(item)
-    elif type(item) == set:
-        summator_in_set(item)
-    elif type(item) == tuple:
-        summator_in_tuple(item)
 
-def summator_in_list(list):
+def summator_in_list_set_tuple(list): #Функция для суммирования элементов в Списках, Множествах и Кортежах
     for item in list:
         plus_item(item)
 
-def summator_in_dict(dict):
+def summator_in_dict(dict): #Функция для суммирования ключей и значений в солварях
     for key in dict:
         plus_item(key)
         plus_item(dict[key])
-
-def summator_in_set(set):
-    for item in set:
-        plus_item(item)
-
-def summator_in_tuple(tuple):
-    for item in tuple:
-        plus_item(item)
 
 def interesting_summator (*structure): # Функция для загрузки рабочей структуры в работу
     global total_sum
@@ -38,7 +26,6 @@ def interesting_summator (*structure): # Функция для загрузки 
     print('Итоговая сумма равна:', total_sum)
 
 '''Рабочая часть программы'''
-
 
 total_sum = 0
 
