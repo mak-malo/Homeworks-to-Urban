@@ -1,16 +1,16 @@
 """Developer - не отлько разработчик"""
 class House():
-    def __init__(self, name, number_of_floar):
+    def __init__(self, name, number_of_floor):
         self.name = name
-        self.number_of_floar = number_of_floar
+        self.number_of_floor = number_of_floor
 
-    def go_to(self, new_floar):
+    def go_to(self, new_floor):
         print('\n', self.name)
-        if int(new_floar) >= 1 and new_floar <= self.number_of_floar:
+        if int(new_floor) >= 1 and new_floor <= self.number_of_floor:
             print('Вы можете поехать на эти этажи:')
-            for i in range(1, self.number_of_floar):
+            for i in range(1, self.number_of_floor):
                 print (i, end = ', ')
-            print(self.number_of_floar)
+            print(self.number_of_floor)
         else:
             print('Такого этажа не существует')
 
