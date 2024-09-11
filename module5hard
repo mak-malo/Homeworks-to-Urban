@@ -1,0 +1,47 @@
+class User():
+
+    def __init__(self, nickname, password, age):
+        self.nickname = nickname
+        self.password = hash(password)
+        self.age = age
+
+
+class Video():
+
+    def __init__(self, title, duration, time_now, adult_mode = False):
+        self.title = title
+        self.duration = duration
+        self.time_now = time_now
+        self.adult_mode = adult_mode
+
+
+class UrTube():
+
+    def __init__(self, current_user):
+        self.users = {}
+        self.video = []
+        self.current_user = current_user
+
+    def log_in(self):
+        nickname = input('Введите ваш ник:\n')
+        password = input('Введите пароль:\n')
+        sign_in_flag = {'sign_in_flag': False}
+        if self.users[nickname][0] == hash(password):
+           sign_in_flag['sign_in_flag'] = True
+        else:
+           print('Ник или пароль введены неверно')
+
+    def register(self):
+        while True:
+            nickname = input('Введите ник, под которым вас зарегистрировать:\n')
+            if nickname not in self.users:
+                break
+            else:
+                print('Пользователь с таким ником уже существует')
+
+        password = hash(input('Введите пароль для новой учетной записи:\n'))
+        age = int(input('Пожалуйста, числом введите, сколько вам полных лет:\n'))
+        self.users[nickname] = {'password': password, 'age': age, 'sign_in_flag': True}
+
+    def log_out(self):
+        
